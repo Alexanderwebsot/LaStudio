@@ -8,7 +8,8 @@ $(document).ready(function () {
     top = $(id).offset().top;
     top = top - 50;
     $('html').animate({scrollTop: top}, 1500);
-    
+    $('.modal-menu').removeClass('modal-menu-active');
+    $('.dark-window').removeClass('dark-window-active');
   });
 
   $('.header-slider').slick({
@@ -35,6 +36,14 @@ $(document).ready(function () {
     $('.dark-window').addClass('dark-window-active');
     return false;
   })
+
+  $('.modal-menu_form').on('click', function() {
+    $('.modal-form').addClass('modal-form-active');
+    $('.dark-window').addClass('dark-window-active');
+    $('.modal-menu').removeClass('modal-menu-active');
+    return false;
+  })
+
   $('.dark-window').on('click', function() {
     $('.modal-menu').removeClass('modal-menu-active');
     $('.modal-form').removeClass('modal-form-active');
